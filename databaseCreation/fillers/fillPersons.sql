@@ -1,0 +1,24 @@
+USE db;
+
+INSERT INTO Persons (FirstName, LastName) VALUES ('Oleg', 'Familiev');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Simonne','Singleterry');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Latia', 'Lheureux');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Digna', 'Derossett');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shayna', 'Savage');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Eliana', 'Estrella');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shauna', 'Sieg');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Marisha', 'Mccallie');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shizuko', 'Savory');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Sheldon', 'Small');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Rebbeca', 'Ronning');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Oleg', 'Familiev');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Simonne','Singleterry');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Latia', 'Lheureux');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Digna', 'Derossett');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shayna', 'Savage');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Eliana', 'Estrella');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shauna', 'Sieg');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Marisha', 'Mccallie');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Shizuko', 'Savory');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Sheldon', 'Small');
+INSERT INTO Persons (FirstName, LastName) VALUES ('Rebbeca', 'Ronning');
