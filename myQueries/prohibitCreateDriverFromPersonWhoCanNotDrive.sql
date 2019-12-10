@@ -1,0 +1,13 @@
+USE db;
+
+CREATE TRIGGER DRIVER_LICENCE
+    BEFORE INSERT
+    ON Drivers
+    FOR EACH ROW
+BEGIN
+    IF NEW.PersonId NOT IN (SELECT P_Id FROM Persons WHERE Persons.CanDrive) THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Can not add Person who can not drive to drivers';
+    END IF;
+END;
+
+DROP TRIGGER IF EXISTS DRIVER_LICENCE;

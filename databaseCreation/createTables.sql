@@ -5,13 +5,14 @@ CREATE TABLE Persons
     P_Id      MEDIUMINT NOT NULL AUTO_INCREMENT,
     LastName  varchar(255),
     FirstName varchar(255),
+    CanDrive boolean,
     PRIMARY KEY (P_Id)
 );
 
 CREATE TABLE Drivers
 (
     D_Id     MEDIUMINT NOT NULL AUTO_INCREMENT,
-    PersonId MEDIUMINT NOT NULL,
+    PersonId MEDIUMINT NOT NULL UNIQUE,
     PRIMARY KEY (D_Id),
     FOREIGN KEY (PersonId) REFERENCES Persons (P_Id)
 );
@@ -19,7 +20,7 @@ CREATE TABLE Drivers
 CREATE TABLE Routes
 (
     R_Id        MEDIUMINT NOT NULL AUTO_INCREMENT,
-    RouteNumber varchar(255),
+    RouteNumber varchar(255) UNIQUE,
     PRIMARY KEY (R_Id)
 );
 
