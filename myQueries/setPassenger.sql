@@ -9,6 +9,7 @@ BEGIN
         SELECT R_Id
         FROM Routes
         WHERE RouteNumber = route
+          AND (SELECT DISTINCT COUNT(*) FROM TransfersPersons WHERE TransferId = T_Id) < 10
     )
     LIMIT 1;
 END;
