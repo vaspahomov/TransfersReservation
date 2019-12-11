@@ -25,7 +25,7 @@ BEGIN
         IF FINISHED = 1 THEN
             LEAVE GET_DRIVERS;
         END IF;
-        SET DRIVERS_LIST = CONCAT(Driver_id, ':', C_FirstName, ':', C_LastName, ';', DRIVERS_LIST);
+        SET DRIVERS_LIST = CONCAT(Driver_id, ':', C_FirstName, ' ', C_LastName, ';\r\n', DRIVERS_LIST);
     END LOOP GET_DRIVERS;
     CLOSE GET_DRIVER;
 

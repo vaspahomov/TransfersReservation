@@ -1,8 +1,9 @@
 USE db;
 
-CREATE PROCEDURE GET_DRIVERS_OF_ROUTE(IN routeId MEDIUMINT)
+CREATE FUNCTION GET_DRIVERS_OF_ROUTE(r_Number VARCHAR(255)) RETURNS VARCHAR(255)
 BEGIN
-    SELECT FirstName, LastName
+    DECLARE NAMES_FOUND VARCHAR(255) DEFAULT '';
+    SELECT GROUP_CONCAT(CONCAT(FirstName, ' ', LastName) SEPARATOR ', ')
     FROM Persons
     WHERE Persons.P_Id IN (
         SELECT PersonId
@@ -16,14 +17,17 @@ BEGIN
                 WHERE Transfers.Route_Id IN (
                     SELECT R_Id
                     FROM Routes
-                    WHERE R_Id = routeId
+                    WHERE RouteNumber = r_Number
                 )
             )
         )
-    );
+    )
+    INTO NAMES_FOUND;
+    RETURN NAMES_FOUND;
 END;
 
-DROP PROCEDURE GET_DRIVERS_OF_ROUTE;
+DROP FUNCTION GET_DRIVERS_OF_ROUTE;
 
-SET @routeId = 1;
-CALL GET_DRIVERS_OF_ROUTE(@routeId);
+# SET @routeId = '123';
+SET @routeId = '234';
+SELECT GET_DRIVERS_OF_ROUTE(@routeId);
